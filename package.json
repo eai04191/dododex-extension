@@ -5,10 +5,10 @@
     "scripts": {
         "build": "react-scripts build",
         "eject": "react-scripts eject",
-        "start": "react-scripts start",
-        "test": "react-scripts test",
         "lint": "eslint src",
         "lint:fix": "eslint src --fix",
+        "start": "react-scripts start",
+        "test": "react-scripts test",
         "watch": "nodemon"
     },
     "browserslist": {
