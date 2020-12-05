@@ -1,24 +1,32 @@
-import React from "react";
-import logo from "./logo.svg";
+import React, { useState, useEffect } from "react";
+import Select from "react-select";
+import crs from "./crs.json";
 import "./App.css";
 
 function App() {
+    const [selectedOption, setSelectedOption] = useState<
+        null | undefined | string
+    >(null);
+
+    useEffect(() => {
+        if (typeof selectedOption !== "string") {
+            return;
+        }
+        window.open(
+            `https://www.dododex.com/taming/${selectedOption}`,
+            "_blank"
+        );
+    }, [selectedOption]);
+
     return (
         <div className="App">
-            <header className="App-header">
-                <img src={logo} className="App-logo" alt="logo" />
-                <p>
-                    Edit <code>src/App.tsx</code> and save to reload.
-                </p>
-                <a
-                    className="App-link"
-                    href="https://reactjs.org"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Learn React
-                </a>
-            </header>
+            <Select
+                autoFocus={true}
+                options={crs}
+                onChange={(option) => {
+                    setSelectedOption(option?.value);
+                }}
+            />
         </div>
     );
 }
