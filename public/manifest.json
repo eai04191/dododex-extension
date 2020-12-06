@@ -3,7 +3,7 @@
     "name": "Dododex Opener",
     "version": "1.0.0",
 
-    "description": "Open dododex quickly!",
+    "description": "Open the Dododex quickly!",
 
     "browser_action": {
         "default_popup": "index.html"
